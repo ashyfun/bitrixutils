@@ -26,7 +26,7 @@ class Define:
         for i, val in enumerate(litra.strftime('%Y%m%d')):
             for k, v in enumerate(template):
                 unicode = ord(v)
-                if unicode > 47 and unicode < 56 and int(v) == i:
+                if 47 < unicode < 56 and int(v) == i:
                     template = template[:k] + val + template[k + 1:]
                     break
 

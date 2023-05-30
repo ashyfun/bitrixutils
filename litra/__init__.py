@@ -1,1 +1,1 @@
-from halfway import *
+from litra.halfway import *
