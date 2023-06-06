@@ -1,6 +1,6 @@
 import click
 
-from litra import Define, AdminPasswordh
+from bitrixutils.litra import Define, AdminPasswordh
 
 
 @click.group()
