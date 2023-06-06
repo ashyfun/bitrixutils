@@ -1,6 +1,8 @@
 from datetime import datetime, timedelta
 from base64 import b64encode, b64decode
 
+from bitrixutils.litra.exceptions import LitraException
+
 
 class Define:
     _salt = 'DO_NOT_STEAL_OUR_BUS'
@@ -46,6 +48,9 @@ class Define:
         return template
 
     def _extract_from_template(self, template):
+        if len(template) != len(self._template):
+            raise LitraException('template not compatible with hash')
+
         litra = [''] * 8
         for i, v in enumerate(template):
             index = ord(self._template[i])
